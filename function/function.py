@@ -310,25 +310,217 @@
 # print(frequency(s))
 
 
-# Anagram
-def Anagram(str1,str2):
-    if len(str1)!=len(str2):
-        print("not anagram")
-    else:
-        ans={}
-        for i in str1:
-            ans[i]=ans.get(i,0)+1
-        for j in str2:
-            if j in ans:
-                ans[j]-=1
-        freq=True
-        for i in ans.values():
-            if i!=0:
-                freq=False
-        if freq:
-            print("anagram")
-        else:
-            print(not Anagram)
-s1="silent"
-s2="listen"
-Anagram(s1,s2)
+# # Anagram
+# def Anagram(str1,str2):
+#     if len(str1)!=len(str2):
+#         print("not anagram")
+#     else:
+#         ans={}
+#         for i in str1:
+#             ans[i]=ans.get(i,0)+1
+#         for j in str2:
+#             if j in ans:
+#                 ans[j]-=1
+#         freq=True
+#         for i in ans.values():
+#             if i!=0:
+#                 freq=False
+#         if freq:
+#             print("anagram")
+#         else:
+#             print(not Anagram)
+# s1="silent"
+# s2="listen"
+# Anagram(s1,s2)
+
+
+# # non repeative string
+# def Non_repeat(str):
+#     for i in range(len(str)):
+#         count=0
+#         for j in range(len(s)):
+#             if  s[i]==s[j]:
+#                 count+=1
+#         if count==1:     
+#             print(s[i],end=" ")
+# s="programing"
+# Non_repeat(s)
+
+
+
+# GCD
+# def is_gcd(num1,num2):
+#     while num2!=0:
+#         temp=num2
+#         num2=num1%num2
+#         num1=temp
+#     return(num1)
+# a=int(input("Enter the first number:"))
+# b=int(input("Enter the second number:"))
+# print(is_gcd(a,b))
+
+
+
+# def add(x,y):
+#     z=x+y
+#     print(z)
+# add(4,5)
+
+
+
+
+# def add(x,y):
+#     z=x+y
+#     return z
+# print(add(4,5))
+
+
+
+
+# keyword arguments
+# def new(x,y,z):
+#     print(x,y,z)
+#     return x+y+z
+# print(new(z=5,y=4,x=3))
+
+
+# variable length keyword arguments
+# def mydict(** kwargs):
+#     print(kwargs)
+#     print(type(kwargs))
+# mydict(x=10,y=20,z=30,p=40,q=50)
+
+# mydict={'x': 10, 'y': 20, 'z': 30, 'p': 40, 'q': 50}
+# sum=0
+# for i in mydict.values():
+#     sum+=i
+# print(sum)
+
+
+# def mydict(** kwargs):
+#     sum=0
+#     for i in kwargs.values():
+#         sum+=i
+#     return sum
+# print(mydict(x=10,y=20,z=30,p=40,q=50))
+
+
+
+#
+
+
+# def is_prime(x):
+#     flag=True
+#     for i in range(2,x):
+#         if x%i==0:
+#             flag=False
+#             break
+#     if flag==True:
+#         print("prime number")
+#     else:
+#         print("not prime number")
+        
+# n=int(input("enter the number:"))
+# is_prime(n)
+
+
+# def year(n):
+#     if (n%4==0 and n%100!=0) or n%400==0:
+#         print("leap year")
+#     else:
+#         print("not leap year")
+    
+# num=int(input("enter the number:"))
+# year(num)
+
+# map method
+
+# l1=[1,2,3,4,5]
+# l2=[2,3,4,5]
+# l3=[3,4,5,6,7]
+
+# def add(x,y,z):
+#     return x+y+z
+# result=map(add,l1,l2, l3)
+    
+# print(result)
+# print(list(result))
+
+
+# li=[1,2,3,4,5]
+# def square(x):
+#     return x**2
+# result=map(square,li)
+# print(list(result))
+
+
+
+
+
+# filter method
+# li=[1,2,3,4,5,6,7,8,9,10]
+# def even_no(x):
+#     if x%2==0:
+#         return x
+# result=filter(even_no,li)
+# # print(list(result))
+# print(tuple(result))
+
+
+
+# def even_no(x):
+#     if x%2==0:
+#         return 'even'
+#     else:
+#         return 'odd'
+# li=[1,2,3,4,5,6,7,8,9,10]
+# result=map(even_no,li)
+# print(list(result))
+
+
+
+
+
+# reduce method
+# functools.reduce(fun_name,iterator,initial)
+import functools
+
+# li=[1,2,3,4,5,6,9,8]
+
+# def max_digit(x,y):
+#     if x>y:
+#         return x
+#     else:
+#         return y
+# result=functools.reduce(max_digit,li,0)
+# print(result)
+    
+    
+# li=[1,2,3,4,5,6,9,8]
+
+# def min_digit(x,y):
+#     if x<y:
+#         return x
+#     else:
+#         return y
+# result=functools.reduce(min_digit,li)
+# print(result)
+
+
+
+li=[1,2,3,4,5,6,9,8]
+
+def sum(x,y):
+    return x+y
+    
+result=functools.reduce(sum,li)
+print(result)
+
+
+
+
+
+
+
+
+
