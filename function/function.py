@@ -8,6 +8,7 @@
 
 
 #non return with arguments
+
 # def multi(a,b):
 #     print(a*b)
 # x=int(input("enter the number:"))
@@ -483,39 +484,175 @@
 
 # reduce method
 # functools.reduce(fun_name,iterator,initial)
-import functools
+# import functools
+
+# # li=[1,2,3,4,5,6,9,8]
+
+# # def max_digit(x,y):
+# #     if x>y:
+# #         return x
+# #     else:
+# #         return y
+# # result=functools.reduce(max_digit,li,0)
+# # print(result)
+    
+    
+# # li=[1,2,3,4,5,6,9,8]
+
+# # def min_digit(x,y):
+# #     if x<y:
+# #         return x
+# #     else:
+# #         return y
+# # result=functools.reduce(min_digit,li)
+# # print(result)
+
+
 
 # li=[1,2,3,4,5,6,9,8]
 
-# def max_digit(x,y):
-#     if x>y:
-#         return x
-#     else:
-#         return y
-# result=functools.reduce(max_digit,li,0)
-# print(result)
+# def sum(x,y):
+#     return x+y
     
-    
-# li=[1,2,3,4,5,6,9,8]
-
-# def min_digit(x,y):
-#     if x<y:
-#         return x
-#     else:
-#         return y
-# result=functools.reduce(min_digit,li)
+# result=functools.reduce(sum,li)
 # print(result)
 
 
 
-li=[1,2,3,4,5,6,9,8]
 
-def sum(x,y):
-    return x+y
-    
-result=functools.reduce(sum,li)
-print(result)
 
+
+# lamda  
+# x=lambda x,y:x+y
+# x(4,5)
+
+
+# x=lambda x,y:print(x+y)
+# x(4,5)
+
+# x=lambda x,y:x+y
+# print(x(4,5))
+
+# x=lambda x,y:print(x+y)
+# print(x(4,5))
+
+
+
+# li=[1,2,3,4,5,6,7,8,9]
+# result=filter(lambda x: x if x%2==0 else None,li)
+# print(list(result))
+
+
+# li=[1,2,3,4,5,6,7,8,9]
+# result=map(lambda x: 'even' if x%2==0 else 'odd',li)
+# print(list(result))
+
+# from functools import reduce
+# li=[1,2,3,4,5,6,7,8,9]
+# result=reduce(lambda x,y:x+y,li)
+# print(result)
+
+
+# li=[1,2,3,4,5,6,7,8,9]
+# result=reduce(lambda x,y: x if x>y else y,li)
+# print(result)
+
+# li=[1,2,3,4,5,6,7,8,9]
+# x=[lambda x: i for i in li] 
+# print(x(li))
+
+# import datetime
+
+# now = datetime.datetime.now()
+# print("Current date and time:", now)
+
+
+
+# print("Year:", now.year)
+# print("Month:", now.month)
+# print("Day:", now.day)
+# print("Hour:", now.hour)
+# print("Minute:", now.minute)
+# print("Second:", now.second)
+
+
+# from datetime import datetime, timedelta
+
+# now = datetime.now()
+# print("Now:", now)
+
+# # Add 7 days
+# future = now + timedelta(days=7)
+# print("7 days later:", future)
+
+# # Subtract 2 hours
+# past = now - timedelta(hours=2)
+# print("2 hours ago:", past)
+
+
+# delta = timedelta(days=1, hours=5, minutes=30)
+# print(delta)  
+
+
+#decorator
+# from first import decor
+# @decor
+# def add(x,y):
+#     z=x+y
+#     return z
+# result=add(5,5)
+# print(result)
+
+
+
+# def outer():
+#     def inner():
+#         print("from inner function")
+#     return inner
+# data=outer()
+# print(data)
+# x=data()
+
+
+
+# def outer(x):
+#     def inner():
+#         y=x()
+#         return y
+#     return inner
+# def x():
+#     return "from function x"
+# data=outer(x)
+# z=data()
+# print(z)
+
+
+# def outer(func):
+#     def inner (x,y):
+#         x=x+5
+#         y=y*2
+#         z=func(x,y)
+#         return z
+#     return inner
+
+# def add(x,y):
+#     z=x+y
+#     return z
+# data=outer(add)
+# z=data(5,10)
+# print(z)
+
+
+def decor(x):
+    def inner():
+        data=x()
+        return data
+    return inner
+@decor
+def main_function():
+    return "main_function"
+x=main_function()
+print(x)
 
 
 
